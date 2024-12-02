@@ -1,4 +1,13 @@
 test_input = """
+3   4
+4   3
+2   5
+1   3
+3   9
+3   3
+"""
+
+input = """
 56208   95668
 52621   74203
 95252   33335
@@ -1002,13 +1011,11 @@ test_input = """
 
 """
 
-test_input.splitlines()
-
 arr1 = []
 arr2 = []
 total = 0
 
-for line in test_input.splitlines():
+for line in input.splitlines():
     if not line:
         continue
     nums = [int(x) for x in line.split("   ")]
@@ -1024,4 +1031,10 @@ for a, b in zip(arr1, arr2):
 print(total)
 
 
+total_pt2 = 0
+for a in arr1:
+    total_pt2 += a * arr2.count(a)
+
+print(total_pt2)
+# 21142653
     
